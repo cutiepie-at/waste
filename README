@@ -1,0 +1,76 @@
+# Setup
+install python 3.6
+install guesslang with 'sudo pip3 install guesslang'
+
+Apache Website Config
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<VirtualHost *:80>
+        ServerAdmin <email>
+        DocumentRoot <waste root>
+        ServerName <domain>
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory <waste root>>
+                Options -Indexes +FollowSymLinks +MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+                RewriteEngine on
+                RewriteBase /
+                RewriteCond %{REQUEST_URI} !^/(index\.php|style\.css|hightlight\.css|script\.js|wastelogo\.png|save\.png|new\.png|favicon\.ico|\.well-known)$ 
+                RewriteRule "^(.+)$" /index.php?f=$1
+		RewriteCond %{HTTPS} off
+		RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+<VirtualHost *:443>
+        ServerAdmin <email>
+        DocumentRoot <waste root>
+        ServerName <domain>
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory <waste root>>
+                Options -Indexes +FollowSymLinks +MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+                RewriteEngine on
+                RewriteBase /
+                RewriteCond %{REQUEST_URI} !^/(index\.php|style\.css|hightlight\.css|script\.js|wastelogo\.png|save\.png|new\.png|favicon\.ico)$
+                RewriteRule "^(.+)$" /index.php?f=$1
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	SSLCertificateFile <cert file>
+	SSLCertificateKeyFile <private key file>
+</VirtualHost>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Optional for better performance
+wget https://github.com/mind/wheels/releases/download/tf1.7-cpu/tensorflow-1.7.0-cp36-cp36m-linux_x86_64.whl
+install tensorflow with 'sudo pip3.6 install tensorflow-1.7.0-cp36-cp36m-linux_x86_64.whl'
+
+

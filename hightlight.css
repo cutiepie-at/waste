@@ -1,0 +1,179 @@
+.keyword, .kw1, .kw2, .kw4
+{
+  color: #00aaff;
+  font-weight: bold;
+}
+.type
+{
+  color: #0000ff;
+  font-weight: bold;
+}
+
+.preprocessor, .co2
+{
+  color: #cc8800;
+  font-weight: bold;
+}
+
+.comment, .co1, .co3, .re6
+{
+  color: #888888;
+}
+
+.variable, .re0
+{
+  color: #bb00bb;
+}
+
+.string, .st_h, .st0
+{
+  color: #ffff00;
+}
+
+.brackets, .br0
+{
+  color: #ff00ff;
+}
+
+.operator, .sy0
+{
+  color: #00ff00;
+}
+
+.number, .nu0
+{
+  color: #ff0000;
+}
+
+.special
+{
+  color: #00ff00;
+}
+
+.re1, .re2
+{
+  color: #ffaa00;
+}
+
+/* diff - */
+.re3, .re7
+{
+  background-color: #550000;
+}
+
+/* diff + */
+.re4, .re8
+{
+  background-color: #005500;
+}
+
+.sc-1
+{
+  color: red;
+}
+
+.pastebox a
+{
+  color: #ffffff;  
+}
+
+.mccolor0
+{
+  color: #000000;  
+}
+
+.mccolor1
+{
+  color: #0000AA;  
+}
+
+.mccolor2
+{
+  color: #00AA00;  
+}
+
+.mccolor3
+{
+  color: #00AAAA;  
+}
+
+.mccolor4
+{
+  color: #AA0000;  
+}
+
+.mccolor5
+{
+  color: #AA00AA;  
+}
+
+.mccolor6
+{
+  color: #AAAA00;  
+}
+
+.mccolor7
+{
+  color: #AAAAAA;  
+}
+
+.mccolor8
+{
+  color: #555555;  
+}
+
+.mccolor9
+{
+  color: #5555FF;  
+}
+
+.mccolorA
+{
+  color: #55FF55;  
+}
+
+.mccolorB
+{
+  color: #55FFFF;  
+}
+
+.mccolorC
+{
+  color: #FF5555;  
+}
+
+.mccolorD
+{
+  color: #FF55FF;  
+}
+
+.mccolorE
+{
+  color: #FFFF55;  
+}
+
+.mccolorF
+{
+  color: #FFFFFF;  
+}
+
+.mccolorL
+{
+  font-weight: bold;  
+}
+
+.mccolorM
+{
+  font-style: strikethrough;  
+}
+
+.mccolorN
+{
+  font-style: underline;  
+}
+
+.mccolorO
+{
+  font-style: italic;  
+}
+

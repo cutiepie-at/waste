@@ -69,6 +69,19 @@ Apache Website Config
 </VirtualHost>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+nginx
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    #rewrite
+    location ~ ^/((style\.css)|(hightlight\.css)|(script\.js)|(wastelogo\.png)|(new\.png)|(save\.png)|(powered-by-geshi\.png)|(download\.png)|(favicon\.png)|(\.well-known)|(icon/.*))$ {
+        try_files $uri /$uri =404;
+    }
+
+    location ~ ^/([^/]+)(/?(.*))$ {
+        rewrite ^/([^/]+)(/?(.*))$ /index.php?f=$1&l=$3 last;
+    }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Optional for better performance
 wget https://github.com/mind/wheels/releases/download/tf1.7-cpu/tensorflow-1.7.0-cp36-cp36m-linux_x86_64.whl
 install tensorflow with 'sudo pip3.6 install tensorflow-1.7.0-cp36-cp36m-linux_x86_64.whl'
